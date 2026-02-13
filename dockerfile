@@ -11,6 +11,10 @@ RUN \
 # ---- builder ----
 FROM node:20-alpine AS builder
 WORKDIR /app
+
+ARG APP_VERSION=unknown
+ENV NEXT_PUBLIC_APP_VERSION=$APP_VERSION
+
 COPY --from=deps /app/node_modules ./node_modules
 COPY . .
 RUN npm run build
@@ -20,6 +24,9 @@ FROM node:20-alpine AS runner
 WORKDIR /app
 ENV NODE_ENV=production
 ENV PORT=3000
+
+# Optional (not required for client bundle, but fine for /api/version)
+ENV NEXT_PUBLIC_APP_VERSION=$APP_VERSION
 
 COPY --from=builder /app/.next/standalone ./
 COPY --from=builder /app/.next/static ./.next/static

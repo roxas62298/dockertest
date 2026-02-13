@@ -4,7 +4,7 @@ const BUILD_TIME = new Date().toISOString(); // will change ONLY when you rebuil
 
 export default function Home() {
   // Change this string whenever you want to test updates
-  const VERSION = "v1";
+  const VERSION = "v540.543543";
 
   return (
     <main style={{ fontFamily: "system-ui", padding: 24, maxWidth: 800 }}>
