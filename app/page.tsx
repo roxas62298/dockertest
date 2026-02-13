@@ -1,14 +1,14 @@
-export const dynamic = "force-dynamic"; // ensures fresh render (no caching surprises)
+export const dynamic = "force-dynamic"; 
 
-const BUILD_TIME = new Date().toISOString(); // will change ONLY when you rebuild/redeploy
+const BUILD_TIME = new Date().toISOString(); 
 
 export default function Home() {
-  // Change this string whenever you want to test updates
+
   const VERSION = "vHALOEOEOOE";
 
   return (
     <main style={{ fontFamily: "system-ui", padding: 24, maxWidth: 800 }}>
-      <h1 style={{ fontSize: 32, marginBottom: 8 }}>VERSION: 1234</h1>
+      <h1 style={{ fontSize: 32, marginBottom: 8 }}>VERSION: 43.234.234</h1>
 
   
     </main>
